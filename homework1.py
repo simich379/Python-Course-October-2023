@@ -25,12 +25,14 @@ print("division is : %2.2f" % div)
 # tuples. Finally, insert only the pairs whose name begins with a vowel in a dictionary and print it.
 egn = ("7305034321", "9910064536", "5103736893", "6302014789", "9010196754")
 names = ("Metodi", "Simona", "Elena", "Neli", "Adelina")
-result = ()
+# create a dictionary and zip key - egn with value-name
 this_dict = dict(zip(egn, names))
+# print initial dictionary
 print("Initial dictionary:", this_dict)
 # with list compression:
 # keys = [k for k, v in this_dict.items() if v[0] == 'A' or v[0] == 'E' or v[0] == 'O' or v[0] == 'I' or v[0] == 'U']
 # print("Filtered ", keys)
+# create a new dictionary
 newDict = dict()
 for (key, value) in this_dict.items():
     if value[0] == 'A' or value[0] == 'E' or value[0] == 'O' or value[0] == 'I' or value[0] == 'U':
