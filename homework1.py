@@ -1,4 +1,4 @@
-print("Hello world!");
+print("Hello world!")
 
 ######################################
 # Problem 1:
@@ -39,4 +39,23 @@ for (key, value) in this_dict.items():
 print("filtered dict:", newDict)
 
 ###################################################
+# Problem 3:
+# Fill in the following truth table. Use Python to verify the results.
+# | x | y | x and y | x or y | not x | not y |
+x = input("Enter your value: ")
+y = input("Enter your value: ")
+val = x and y
+print("The result of x and y is", val)
 
+x = input("Enter your value: ")
+y = input("Enter your value: ")
+val = x or y
+print("The result of x or y is", val)
+
+x = input("Enter your value: ")
+val = not x
+print("The result of not x is", val)
+
+y = input("Enter your value: ")
+val = not y
+print("The result of not y is", val)
