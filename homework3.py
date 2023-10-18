@@ -29,7 +29,14 @@ print("Sum is :", sum)
 
 result = int(input("How much does 5 + 17 equal to "))
 
-while True:
+result = 0
+correct_answer = 17
+
+while result != correct_answer:
+     print("Please enter new answer")
+     result = int(input("Input a number : "))
+     
+print("The answer is correct! ")
 
     if result == 22:
         print("The answer is correct! ")
