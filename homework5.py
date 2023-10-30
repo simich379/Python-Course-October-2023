@@ -170,7 +170,6 @@ while i <= q_size:
     if a == 0:
         if isFull() == 1:
             print("Queue is full")
-            break
         else:
             b = int(input())
             enqueue(b)
@@ -207,10 +206,136 @@ print(students_accounts)
 
 # ##################################################
 # 8. Think of a function that can hash lists. Implement it and test it
-def simple_hash(s=[]):
-    hash_code = 0
-    for char in range(0, len(s)):
-        hash_code += ord(char)
-    # ord() returns the ASCII value of a character
-    return hash_code
+def simple_hash(string=None, table_size=None):
+    if string is None:
+        string = []
+    sum_of_hash = 0
+    for pos in range(len(string)):
+        sum_of_hash = sum_of_hash + ord(string[pos])
+
+    return sum_of_hash % table_size
+
+
+hash_func_list = ['a', '1', 'c']
+
+print("Hash function for a list : ", simple_hash(hash_func_list, 2))
+
+# ##################################################
+#
+#  Write a function that counts the frequency of each word in a given string and returns a
+# dictionary with the result.
+
+result_dictionary = {}
+
+ls = []
+
+
+def word_count(input_str):
+    counts = dict()
+    words = input_str.split()
+
+    for word in words:
+        if word in counts:
+            counts[word] += 1
+        else:
+            counts[word] = 1
+
+    return counts
+
+
+print(word_count('apple banana cherry apple apple cherry'))
+
+# ##################################################
+# Create two sets with some common elements and find their intersection.
+# first set
+a = {1, 3, 5}
+
+# second set
+b = {1, 2, 3}
+
+# perform intersection operation using &
+print('Intersection using &:', a & b)
+
+
+# ##################################################
+#
+# Given two sets, write a function that determines if one set is a subset of the other.
+
+def is_subset(s1=None, s2=None):
+    if s2 is None:
+        s2 = {}
+    if s1 is None:
+        s1 = {}
+
+    subSet = True
+
+    for i_s1 in s2:
+        if i_s1 not in s1:
+            subSet = False
+
+    if not subSet:
+        print("SetB is not a subset of SetA")
+    else:
+        print("SetB is a subset of SetA")
+
+    for i_s in s1:
+        if i_s not in s2:
+            subSet = False
+
+    if not subSet:
+        print("SetA is not a subset of SetB")
+    else:
+        print("SetA is a subset of SetB")
+
+
+set1 = {1, 2, 3, 4, 5, 6}
+set2 = {3, 4, 5}
+
+is_subset(set1, set2)
+# ##################################################
+# Write a function to remove duplicates from a list using a set
+
+sam_list = [11, 15, 13, 16, 13, 15, 16, 11]
+
+print("The list is: " + str(sam_list))
+
+sam_list = list(set(sam_list))
+
+print("The list after removing duplicates: " + str(sam_list))
+
+# ##################################################
+# Use list comprehension to create a list of the squares of even numbers from 1 to 30
+
+even_numbers = [x * x for x in range(31) if x % 2 == 0]
+print(" A list of the squares of even numbers from 1 to 30", even_numbers)
+
+# ##################################################
+# Given a list of words, create a dictionary where the keys are the words and the values are
+# their lengths, using dictionary comprehension
+
+words = ['data', 'science', 'machine', 'learning']
+
+var = {i: len(i) for i in words}
+print("Dictionary comprehension (data-len): ", var)
+
+
+# ##################################################
+# Write a program that generates a set of prime numbers less than 100 using list
+# comprehensions and sets.
+
+def prime_range(num):
+    prime = []
+    for i in range(2, num + 1):
+        for j in range(2, num + 1):
+            if i % j == 0:
+                break
+        if i == j:
+            prime.append(i)
+    return prime
+
+
+set_prime_nums = [x for x in range(1, 101) if prime_range(x)]
+
+print("prime numbers in range 1-100 :", set_prime_nums)
+
 # ##################################################
